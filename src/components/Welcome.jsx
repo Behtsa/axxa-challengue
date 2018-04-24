@@ -1,13 +1,24 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import '../firebaseConfig';
+import { Route, Switch, Link, withRouter } from 'react-router-dom';
 import firebase from 'firebase';
+import Insurance from './InsuranceQuote'
 
 
-export default class Welcome extends React.Component {
+class Welcome extends React.Component {
     constructor(props) {
         super(props);
         this.logout = this.logout.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick() {
+        const location = {
+        pathname: '/Cotizacion',
+        }
+
+        this.props.history.push(location)
     }
 
     logout() {
@@ -16,6 +27,7 @@ export default class Welcome extends React.Component {
 
     render() {
         return (
+
             <Container>
                 <Row>
                     <Col xs={{offset: 5 }}><img src="https://dummyimage.com/100x100/000/fff" alt="image"/></Col>
@@ -26,7 +38,7 @@ export default class Welcome extends React.Component {
                     <Col xs={{ size: 10 }}>
                         <FormGroup check>
                             <Label check>
-                                <Input type="checkbox" id="checkbox2" />{' '}
+                            <Input onClick={this.handleClick}/>{' '}
                                 Cotiza tu seguro
                             </Label>
                         </FormGroup>
@@ -66,3 +78,5 @@ export default class Welcome extends React.Component {
         )
     }
 }
+
+export default withRouter(Welcome);
