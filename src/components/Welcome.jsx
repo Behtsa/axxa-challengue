@@ -3,6 +3,7 @@ import { Container, Row, Col, Button, Form, FormGroup, Label, Input, FormText } 
 import '../firebaseConfig';
 import firebase from 'firebase';
 
+
 export default class Welcome extends React.Component {
     constructor(props) {
         super(props);

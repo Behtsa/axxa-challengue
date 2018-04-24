@@ -6,6 +6,7 @@ import Propose from './components/Propose'
 import Login from './components/LogIn'
 import Welcome from './components/Welcome'
 import firebase from 'firebase';
+import Map from './components/Map';
 
 class App extends Component {
   constructor() {
@@ -33,6 +34,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+
     this.authListener();
     }
 
@@ -90,6 +92,8 @@ class App extends Component {
             return <Propose quote = {this.state.quote} />
           }} />
       <div>
+
+        <Map locationLat={-34.397} locationLong={150.644}/>
         {this.state.user ? (<Welcome />) : (<Login />)}
         {/*<InsuranceQuote state = {this.state}
         // handleDays = {this.handleDays}
