@@ -37,4 +37,9 @@
   background-color: #004149;
   color: #fff;
   height: 100vh;
+  padding-top: 100px;
+}
+
+.imgJB {
+  border-radius: 15%;
 }

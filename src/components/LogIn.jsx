@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import '../firebaseConfig';
 import firebase from 'firebase';
+import JB from '../JB.png';
+import { Col, Row } from 'reactstrap';
 
 
 class Login extends Component {
@@ -37,6 +39,9 @@ class Login extends Component {
   render() {
     return (
       <div id='login' className="col-md-6 container">
+      <Row>
+        <Col xs={{offset: 3 }}><img className='img-responsive imgJB' src={JB} style={{ height: `200px`, width:`200px`}}/></Col>
+      </Row>
         <form>
           <div class="form-group">
             <label for="exampleInputEmail1">Correo</label>
