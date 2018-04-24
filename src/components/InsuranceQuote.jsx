@@ -179,7 +179,7 @@ class InsuranceQuote extends Component {
 					<label>Duracion del seguro(dias):</label>
 					<input className='form-control' type='text' name='duration' placeholder='Dias' value={this.props.state.days} onChange={this.handleDays1}/>
 				</div>
-				<input type="submit" value="Cotizar" />
+				<input id='btn-quote' type="submit" className='btn btn-secondary' value="Cotizar" />
 		</form>
 		</div>
    )
