@@ -14,7 +14,7 @@ export default class Welcome extends React.Component {
                 </Row>
                 <Row>
                     <Col xs={{offset: 1 }}><p> Tu cotización con los datos ingresados es la siguiente: </p></Col>
-                    <Col className="hola" xs={{offset: 4 }}><h3>{this.props.quote}</h3></Col>
+                    <Col className="hola" xs={{offset: 4 }}><h3>${this.props.quote}.00</h3></Col>
                 </Row>
                 <Form>
                     <FormGroup check row>
