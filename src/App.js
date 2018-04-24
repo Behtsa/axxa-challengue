@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import './firebaseConfig';
 import { Route, Switch, Link, withRouter } from 'react-router-dom';
 import InsuranceQuote from './components/InsuranceQuote'
 import Propose from './components/Propose'
+import firebase from 'firebase';
 
 class App extends Component {
   constructor() {
     super()
+    this.database = firebase.database().ref().child('speed');
     this.state = {
       age: 'zeroTwenty',
       genre: 'female',
@@ -14,7 +17,8 @@ class App extends Component {
       specialNeeds: 'no',
       location: 'america',
       days: 364,
-      quote: 0
+      quote: 0,
+      speed: 30
     }
 
     this.handleAge = this.handleAge.bind(this);
@@ -26,6 +30,13 @@ class App extends Component {
     this.handleLocation = this.handleLocation.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+  componentDidMount() {
+    this.database.on('value', snap => {
+      this.setState({
+        speed: snap.val()
+      });
+    });
 
   handleSubmit(finalQuote) {
     this.setState({
