@@ -31,3 +31,10 @@
   to { transform: rotate(360deg); }
 }
 
+/*Login Style*/
+
+#login {
+  background-color: #004149;
+  color: #fff;
+  height: 100vh;
+}

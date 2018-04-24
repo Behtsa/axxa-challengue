@@ -1,34 +1,57 @@
 import React, { Component } from 'react';
-import { Container, Row, Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import '../firebaseConfig';
+import firebase from 'firebase';
 
-export default class LogIn extends React.Component {
-    render() {
-      return (
-        <Container>
-          <Row>
-            <Col xs={{offset: 5 }}><img src="https://dummyimage.com/100x100/000/fff" alt="image"/></Col>
-            <Col className="hola" xs={{offset: 2 }}><h1> Ingresa a la app </h1></Col>
-          </Row>
-          <Form inline>
-            <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-                <Col className="hola" xs={{offset: 4 }}>
-                    <Label for="exampleEmail" className="mr-sm-2">Email</Label>
-                    <Input type="email" name="email" id="exampleEmail" placeholder="something@idk.cool" />
-                </Col>
-            </FormGroup>
-            <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-                <Col className="hola" xs={{offset: 4 }}>
-                    <Label for="examplePassword" className="mr-sm-2">Password</Label>
-                    <Input type="password" name="password" id="examplePassword" placeholder="*******" />
-                </Col>
-            </FormGroup>
-            <FormGroup check row>
-                <Col xs={{ size: 10, offset: 4 }}>
-                    <Button>Submit</Button>
-                </Col>
-            </FormGroup>
-          </Form>
-        </Container>
-      );
-    }
+
+class Login extends Component {
+  constructor(props) {
+    super(props);
+    this.login = this.login.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.signup = this.signup.bind(this);
+    this.state = {
+      email: '',
+      password: ''
+    };
+  }
+
+  handleChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
+  }
+
+  login(e) {
+    e.preventDefault();
+    firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
+    }).catch((error) => {
+        alert('Debes registrarte');
+      });
+  }
+
+  signup(e){
+    e.preventDefault();
+    firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+    .catch((error) => {
+        console.log(error);
+      })
+  }
+  render() {
+    return (
+      <div id='login' className="col-md-6 container">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Correo</label>
+            <input  value={this.state.email} onChange={this.handleChange} type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Contraseña</label>
+            <input  value={this.state.password} onChange={this.handleChange} type="password" name="password" class="form-control" id="exampleInputPassword1" />
+          </div>
+          <button type="submit" onClick={this.login} class="btn btn-primary">LogIn</button>
+          <button onClick={this.signup} style={{marginLeft: '25px'}} className="btn btn-success">SignUp</button>
+        </form>
+      
+      </div>
+    );
+  }
 }
+export default Login;
