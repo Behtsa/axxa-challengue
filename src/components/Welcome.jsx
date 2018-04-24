@@ -1,8 +1,19 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import '../firebaseConfig';
+import firebase from 'firebase';
 
 
 export default class Welcome extends React.Component {
+    constructor(props) {
+        super(props);
+        this.logout = this.logout.bind(this);
+    }
+
+    logout() {
+        firebase.auth().signOut();
+    }
+
     render() {
         return (
             <Container>
@@ -47,7 +58,7 @@ export default class Welcome extends React.Component {
                 </FormGroup>
                 <FormGroup>
                     <Col xs={{ size: 10}}>
-                        <Button> Aceptar </Button>
+                        <Button onClick = {this.logout}> LogOut </Button>
                     </Col>
                 </FormGroup>
             </Form>
