@@ -165,7 +165,7 @@ class InsuranceQuote extends Component {
 					<div className='form-group'>
 						<label>Edad:</label>
 						<select className="custom-select col-md-12" value={this.state.age} onChange={this.handleAge}>
-	          	<option className='col-md-12' value="zeroTwenty">0-20</option>
+	          	<option value="zeroTwenty">0-20</option>
 	          	<option value="twentyOneThirty">21-30</option>
 	          	<option value="thirtyOneForty">31-40</option>
 	          	<option value="fortyOneNinety">41-99</option>
