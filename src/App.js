@@ -7,6 +7,7 @@ import Login from './components/LogIn'
 import Welcome from './components/Welcome'
 import firebase from 'firebase';
 import Map from './components/Map';
+import Services from './components/Services';
 
 class App extends Component {
   constructor() {
@@ -103,6 +104,7 @@ class App extends Component {
         // handleGenre = {this.handleGenre}
         // handleAge = {this.handleAge}
         // handleSubmit = {this.handleSubmit} />*/}
+        <Services />
       </div>
       </Switch>
     );
