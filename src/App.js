@@ -4,6 +4,7 @@ import { Route, Switch, Link, withRouter } from 'react-router-dom';
 import InsuranceQuote from './components/InsuranceQuote'
 import Propose from './components/Propose'
 import firebase from 'firebase';
+import Map from './components/Map';
 
 class App extends Component {
   constructor() {
@@ -37,6 +38,7 @@ class App extends Component {
         speed: snap.val()
       });
     });
+  }
 
   handleSubmit(finalQuote) {
     this.setState({
@@ -94,6 +96,7 @@ class App extends Component {
         handleGenre = {this.handleGenre}
         handleAge = {this.handleAge}
         handleSubmit = {this.handleSubmit} /> 
+        <Map locationLat={-34.397} locationLong={150.644}/>
       </div>
       </Switch>
     );
