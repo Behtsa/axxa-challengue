@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono')
+
 .App {
   text-align: center;
 }
@@ -37,13 +39,31 @@
 
 /*Login Style*/
 
-#login {
+* {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+#login, #form, #propose{
   background-color: #004149;
   color: #fff;
   height: 100vh;
+}
+
+#login {
   padding-top: 100px;
+
+}
+
+#form {
+  padding-top: 30px;
 }
 
 .imgJB {
   border-radius: 15%;
 }
+
+.center {
+  margin-left: 150px !important;
+  margin-top: 10px !important;
+}
+

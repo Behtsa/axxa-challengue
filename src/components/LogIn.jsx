@@ -40,7 +40,7 @@ class Login extends Component {
     return (
       <div id='login' className="col-md-6 container">
       <Row>
-        <Col xs={{offset: 3 }}><img className='img-responsive imgJB' src={JB} style={{ height: `200px`, width:`200px`}}/></Col>
+        <Col xs={{offset: 3 }}><img className='img-responsive imgJB' src={JB} style={{ height: `250px`, width:`180px`}}/></Col>
       </Row>
         <form>
           <div class="form-group">
@@ -51,8 +51,8 @@ class Login extends Component {
             <label for="exampleInputPassword1">Contraseña</label>
             <input  value={this.state.password} onChange={this.handleChange} type="password" name="password" class="form-control" id="exampleInputPassword1" />
           </div>
-          <button type="submit" onClick={this.login} class="btn btn-primary">LogIn</button>
-          <button onClick={this.signup} style={{marginLeft: '25px'}} className="btn btn-success">SignUp</button>
+          <button type="submit" onClick={this.login} class="btn btn-primary center">Log In</button>
+          <button onClick={this.signup} style={{marginLeft: '25px'}} className="btn btn-success center">SignUp</button>
         </form>
       
       </div>

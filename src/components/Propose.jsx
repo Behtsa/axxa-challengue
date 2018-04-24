@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Button, Form, FormGroup } from 'reactstrap';
+import JB from '../JB.png'
 
 export default class Welcome extends React.Component {
   constructor(props) {
@@ -7,9 +8,9 @@ export default class Welcome extends React.Component {
   }
     render() {
         return (
-            <Container>
+            <Container id= 'propose'>
                 <Row>
-                    <Col xs={{offset: 4 }}><img src="https://dummyimage.com/100x100/000/fff" alt="image"/></Col>
+                    <Col xs={{offset: 4 }}><img src={JB} alt="image" style={{ height: `250px`, width:`180px`}}/></Col>
                     <Col className="hola" xs={{offset: 1 }}><h2> Propuesta de seguro </h2></Col>
                 </Row>
                 <Row>

@@ -92,19 +92,20 @@ class App extends Component {
         <Route exact path='/Propose' render = {() => {
             return <Propose quote = {this.state.quote} />
           }} />
+        <Route exact path='/Cotizacion' render = {() => {
+                return <InsuranceQuote state = {this.state}
+        handleDays = {this.handleDays}
+        handleLocation = {this.handleLocation}
+        handleHealthLevel = {this.handleHealthLevel}
+        handleIncome = {this.handleIncome}
+        handleGenre = {this.handleGenre}
+        handleAge = {this.handleAge}
+        handleSubmit = {this.handleSubmit} />
+          }} />
       <div>
 
-        <Map locationLat={-34.397} locationLong={150.644}/>
-        {this.state.user ? (<Welcome />) : (<Login />)}
-        {/*<InsuranceQuote state = {this.state}
-        // handleDays = {this.handleDays}
-        // handleLocation = {this.handleLocation}
-        // handleHealthLevel = {this.handleHealthLevel}
-        // handleIncome = {this.handleIncome}
-        // handleGenre = {this.handleGenre}
-        // handleAge = {this.handleAge}
-        // handleSubmit = {this.handleSubmit} />*/}
-        <Services />
+      {this.state.user ? (<Welcome />) : (<Login />)}
+
       </div>
       </Switch>
     );
