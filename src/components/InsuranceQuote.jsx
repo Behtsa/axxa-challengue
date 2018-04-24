@@ -11,7 +11,6 @@ class InsuranceQuote extends Component {
     this.handleGenre1 = this.handleGenre1.bind(this);
     this.handleIncome1 = this.handleIncome1.bind(this);
     this.handleHealthLevel1 = this.handleHealthLevel1.bind(this);
-    this.handleNeeds1 = this.handleNeeds1.bind(this);
     this.handleDays1 = this.handleDays1.bind(this);
     this.handleLocation1 = this.handleLocation1.bind(this);
     this.handleSubmit1 = this.handleSubmit1.bind(this);
@@ -24,10 +23,9 @@ class InsuranceQuote extends Component {
     const genre = this.validateGenre(this.props.state.genre);
     const income = this.validateSocioeconomicStatus(this.props.state.monthlyIncome);
     const health = this.validateHealthLevel(this.props.state.healthLevel)
-    const needs = this.validateSpecialNeeds(this.props.state.specialNeeds);
     const location = this.valiadateLocation(this.props.state.location);
     const days = parseInt(this.props.state.days);
-    const finalQuote = parseInt(((baseCost * age * genre * income * health * needs * location * days) * 1.20));
+    const finalQuote = parseInt(((baseCost * age * genre * income * health * location * days) * 1.20));
     return finalQuote
   }
 
@@ -41,20 +39,6 @@ class InsuranceQuote extends Component {
       return 1.1;
       case 'oceania':
       return 1.1;
-      default:
-      return 1.1;
-
-    }
-  }
-
-  validateSpecialNeeds(need) {
-    switch(need) {
-      case 'cajaGrande':
-      return 1.3;
-      case 'cajaMed':
-      return 1.2;
-      case 'no':
-      return 1;
       default:
       return 1.1;
 
@@ -131,10 +115,6 @@ class InsuranceQuote extends Component {
     this.props.handleHealthLevel(event.target.value);
   }
 
-  handleNeeds1(event) {
-    this.props.handleNeeds(event.target.value);
-  }
-
   handleLocation1(event) {
     this.props.handleLocation(event.target.value);
   }
@@ -184,14 +164,6 @@ class InsuranceQuote extends Component {
 	          	<option value="3">76-100</option>
 	        	</select>
 	      	</div>
-	      	<div className='form-group'>
-						<label>Necesidades especiales:</label>
-						<select className="custom-select" value={this.props.state.specialNeeds} onChange={this.handleNeeds1}>
-            	<option value="cajaGrande">Caja grande</option>
-            	<option value="cajaMed">Caja mediana</option>
-            	<option value="CajaCh">Caja chica</option>
-            	<option value="no">Sin necesidad especial</option>
-          	</select>
 		  		<div className='form-group'>
 						<label> Destino </label>
 						<select className="custom-select" value={this.props.state.location} onChange={this.handleLocation1}>
@@ -208,7 +180,6 @@ class InsuranceQuote extends Component {
 					<input className='form-control' type='text' name='duration' placeholder='Dias' value={this.props.state.days} onChange={this.handleDays1}/>
 				</div>
 				<input type="submit" value="Cotizar" />
-			</div>
 		</form>
 		</div>
    )
