@@ -5,6 +5,7 @@ import { Route, Switch, Link, withRouter } from 'react-router-dom';
 import firebase from 'firebase';
 import Insurance from './InsuranceQuote'
 
+
 class Welcome extends React.Component {
     constructor(props) {
         super(props);
