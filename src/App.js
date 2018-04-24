@@ -7,6 +7,7 @@ import Login from './components/LogIn'
 import Welcome from './components/Welcome'
 import firebase from 'firebase';
 import Map from './components/Map';
+import Services from './components/Services';
 
 class App extends Component {
   constructor() {
@@ -105,8 +106,6 @@ class App extends Component {
 
       {this.state.user ? (<Welcome />) : (<Login />)}
 
-        <Map locationLat={-34.397} locationLong={150.644}/>
-        {this.state.user ? (<Welcome />) : (<Login />)}
       </div>
       </Switch>
     );
