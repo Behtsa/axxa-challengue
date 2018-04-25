@@ -6,7 +6,7 @@ import Propose from './components/Propose'
 import Login from './components/LogIn'
 import Welcome from './components/Welcome'
 import firebase from 'firebase';
-import Map from './components/Map';
+import Mymap from './components/Map';
 import Services from './components/Services';
 
 class App extends Component {
@@ -101,6 +101,9 @@ class App extends Component {
         handleGenre = {this.handleGenre}
         handleAge = {this.handleAge}
         handleSubmit = {this.handleSubmit} />
+          }} />
+        <Route exact path='/Map' render = {() => {
+            return <Mymap locationLat={-34.397} locationLong={150.644} />
           }} />
       <div>
 
