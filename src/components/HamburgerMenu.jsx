@@ -20,15 +20,15 @@ export default class HamburgerMenu extends React.Component {
     return (
       <div>
         <Navbar color="faded" light>
-          <NavbarBrand href="/" className="mr-auto">reactstrap</NavbarBrand>
+          <NavbarBrand href="/" className="mr-auto"></NavbarBrand>
           <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
           <Collapse isOpen={!this.state.collapsed} navbar>
             <Nav navbar>
               <NavItem>
-                <NavLink href="/components/">Components</NavLink>
+                <NavLink href="/components/">Services</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+                <NavLink href="https://github.com/reactstrap/reactstrap">LogOut</NavLink>
               </NavItem>
             </Nav>
           </Collapse>

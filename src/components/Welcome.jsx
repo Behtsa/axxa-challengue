@@ -35,54 +35,46 @@ class Welcome extends React.Component {
 
     render() {
         return (
-
-            <Container>
+            <Container id='welcome'>
                 <Hamburger />
                 <Row>
                     <Col xs={{offset: 3 }}><img className='img-responsive imgJB' src={JB} style={{ height: `200px`, width:`200px`}} alt="image"/></Col>
-                    <Col className="hola" xs={{offset: 2 }}><h2> Bienvenido a la app </h2></Col>
-            </Row>
+                    <Col className="hola" xs={{offset: 2 }}><h2> Bienvenido a Safeguard </h2></Col>
+                </Row>
                 <Row>
                     <Col className="holaa" xs={{offset: 1 }}>
                         <img className='img-responsive' src={Cotiza} style={{ height: `120px`, width:`120px`}} alt="image"/>
-                        <p> Cotiza tu seguro </p>
-
+                    </Col>
+                </Row>
             <Form>
                 <FormGroup row>
-                    <Col xs={{ size: 10 }}>
+                    <Col xs={{ size: 8 }}>
                         <FormGroup check>
                             <Label check>
-                            <Input onClick={this.handleClick}/>{' '}
-                                Cotiza tu seguro
+                            <Button className='btn btn-success' onClick={this.handleClick}>Cotiza tu seguro</Button>
                             </Label>
                         </FormGroup>
-                    </Col>
-                    <Col xs={{ size: 10 }}>
-                        <FormGroup check>
-                            <Label check>
-                                <Input type="checkbox" id="checkbox2" />{' '}
-                                Servicios
-                            </Label>
-                      </FormGroup>
                     </Col>
                     <Col className="holaa" xs={{offset: 2 }}>
                         <img className='img-responsive' src={Serviceees} style={{ height: `120px`, width:`120px`}} alt="image"/>
                         <p> Servicios </p> 
                     </Col>
-                </Row>
+
                 <Row>
-                    <Col className="holaa" xs={{offset: 1 }}>
-                        <img className='img-responsive' src={SOS} style={{ height: `120px`, width:`120px`}} alt="image"/>
-                        <p> S.O.S </p>
-                    </Col>
+                    
                     <Col className="holaa" xs={{offset: 2 }}>
                         <img className='img-responsive' src={Agente} style={{ height: `120px`, width:`120px`}} alt="image"/>
                         <p> Ver agentes </p>
                     </Col>
                 </Row>
-                <Row>
-                    <Col className="holaa" xs={{offset: 10 }}><img className='img-responsive' src={Axa} style={{ height: `50px`, width:`50px`}} alt="image"/></Col>
-                </Row>
+                
+                </FormGroup>
+                <FormGroup id='logOut'>
+                     
+                      <Button className='btn btn-secondary' onClick = {this.logout}> LogOut </Button>
+                     
+                 </FormGroup>
+                </Form>
             </Container>
         )
     }

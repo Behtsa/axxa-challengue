@@ -5,6 +5,12 @@ import JB from '../JB.png'
 export default class Welcome extends React.Component {
   constructor(props) {
     super(props)
+
+    this.comfirm = this.confirm.bind(this);
+  }
+
+  confirm() {
+    alert('FELICIDADES AHORA TE ENCUENTRAS PROTEGIDO')
   }
     render() {
         return (
@@ -20,7 +26,7 @@ export default class Welcome extends React.Component {
                 <Form>
                     <FormGroup check row>
                         <Col className="hola" xs={{ size: 10, offset: 3 }}>
-                            <Button color="success"> Contratar </Button>{' '}
+                            <Button color="success" onClick={this.confirm}> Contratar </Button>{' '}
                         </Col>
                     </FormGroup>
                     <FormGroup check row>
